@@ -1,6 +1,6 @@
-# Terraform-aws-ec2
+# Terraform-aws-msk
 
-# Terraform AWS Cloud EC2 Module
+# Terraform AWS Cloud MSK Module
 
 ## Table of Contents
 - [Introduction](#introduction)
