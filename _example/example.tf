@@ -11,7 +11,7 @@ locals {
 }
 
 module "vpc" {
-  source = "git::https://github.com/opsstation/terraform-aws-vpc.git?ref=v1.0.0"
+  source = "git::https://github.com/yadavprakash/terraform-aws-vpc.git?ref=v1.0.0"
 
   name                                      = "${local.name}-vpc"
   environment                               = local.environment
@@ -25,7 +25,7 @@ module "vpc" {
 }
 
 module "subnets" {
-  source = "git::https://github.com/opsstation/terraform-aws-subnet.git?ref=v1.0.0"
+  source = "git::https://github.com/yadavprakash/terraform-aws-subnet.git?ref=v1.0.0"
 
   name                = "${local.name}-subnet"
   environment         = local.environment
@@ -44,7 +44,7 @@ module "subnets" {
 ################################################################################
 
 module "ssh" {
-  source = "git::https://github.com/opsstation/terraform-aws-security-group.git?ref=v1.0.0"
+  source = "git::https://github.com/yadavprakash/terraform-aws-security-group.git?ref=v1.0.0"
 
   name        = "${local.name}-ssh"
   environment = local.environment
@@ -72,7 +72,7 @@ module "ssh" {
 
 #tfsec:ignore:aws-ec2-no-public-egress-sgr
 module "http_https" {
-  source = "git::https://github.com/opsstation/terraform-aws-security-group.git?ref=v1.0.0"
+  source = "git::https://github.com/yadavprakash/terraform-aws-security-group.git?ref=v1.0.0"
 
   name        = "${local.name}-http-https"
   environment = local.environment
@@ -119,7 +119,7 @@ module "http_https" {
 }
 
 module "s3_bucket" {
-  source = "git::https://github.com/opsstation/terraform-aws-s3.git?ref=v1.0.0"
+  source = "git::https://github.com/yadavprakash/terraform-aws-s3.git?ref=v1.0.0"
 
   name        = "${local.name}-s3-bucket"
   environment = local.environment
@@ -128,7 +128,7 @@ module "s3_bucket" {
 }
 
 module "kms_key" {
-  source = "git::https://github.com/opsstation/terraform-aws-kms.git?ref=v1.0.0"
+  source = "git::https://github.com/yadavprakash/terraform-aws-kms.git?ref=v1.0.0"
 
   name                    = "${local.name}-kms"
   environment             = local.environment
@@ -156,7 +156,7 @@ data "aws_iam_policy_document" "kms" {
 }
 
 module "secrets_manager" {
-  source = "git::https://github.com/opsstation/terraform-aws-secrets-manager.git?ref=v1.0.0"
+  source = "git::https://github.com/yadavprakash/terraform-aws-secrets-manager.git?ref=v1.0.0"
 
   name        = "${local.name}-secrets-manager"
   environment = local.environment
